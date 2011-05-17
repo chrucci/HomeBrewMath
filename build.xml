@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<project name="HomeBrewMath Build" default="build" basedir=".">
+  <property name="tools.dir" location="D:\Dev\Tools"/>
+  <property name="jstestdriver.dir" location="${tools.dir}\JsTestDriver"/>
+  <property name="jstestdriver.jar" location="${jstestdriver.dir}\JsTestDriver-1.3.2.jar"/>
+  <property name="jstestdriver.conf" value="jsTestDriver.conf"/>
+  <property name="jstestdriver.port" value="9876"/>
+  <property name="jstestdriver.output.dir" location="_build\results" relative="true"/>
+  <property name="browser.chrome" value="C:\Users\Chris\AppData\Local\Google\Chrome\Application\chrome.exe"/>
+  <property name="browser.firefox" value="C:\Program Files (x86)\Mozilla Firefox\firefox.exe"/>
+  <property name="browser.iexplorer" value="C:\Program Files\Internet Explorer\iexplore.exe"/>
+  <property name="browser.opera" value="C:\Program Files (x86)\Opera\opera.exe"/>
+
+  <target name="build" depends="jstests,endtime"/>
+  
+  <target name="jstests" depends="makeBuildDirs">
+    <echo message="TOOLS = ${tools.dir}"/>
+    <java jar="${jstestdriver.jar}" fork="true">
+      <arg value="--config"/>
+      <arg value="${jstestdriver.conf}"/>
+      <arg value="--browser"/>
+      <arg value="${browser.iexplorer},${browser.firefox}"/><!--,${browser.safari},${browser.chrome}"/>-->
+      <arg value="--tests"/>
+      <arg value="all"/>
+      <arg value="--port"/>
+      <arg value="${jstestdriver.port}"/>
+      <arg value="--testOutput"/>
+      <arg value="${jstestdriver.output.dir}"/>
+    </java>
+  </target>
+
+  <target name="makeBuildDirs">
+    <mkdir dir="${jstestdriver.output.dir}"/>
+  </target>
+  
+  <target name="cleanBuildDirs">
+    <delete dir="${jstestdriver.output.dir}"/>
+  </target>
+  
+  <target name="endtime">
+    <tstamp>
+      <format property="end.time" pattern="MM/dd/yyyy hh:mm:ss aa" />
+    </tstamp>
+    <echo message="${end.time}"/>
+  </target>
+  
+</project>

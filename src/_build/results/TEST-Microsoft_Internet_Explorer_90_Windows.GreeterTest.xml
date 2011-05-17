@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Microsoft_Internet_Explorer_90_Windows.GreeterTest" errors="0" failures="1" tests="2" time="0.0">
+<testcase classname="Microsoft_Internet_Explorer_90_Windows.GreeterTest" name="testGreet" time="0.0"/>
+<testcase classname="Microsoft_Internet_Explorer_90_Windows.GreeterTest" name="testGreetBad" time="0.0">
+<failure type="failed" message="[{&quot;description&quot;:&quot;expected \&quot;Hello Worldd!\&quot; but was \&quot;Hello World!\&quot;&quot;,&quot;message&quot;:&quot;expected \&quot;Hello Worldd!\&quot; but was \&quot;Hello World!\&quot;&quot;,&quot;name&quot;:&quot;AssertError&quot;}]">&#13;
+&#13;
+</failure>
+</testcase>
+</testsuite>

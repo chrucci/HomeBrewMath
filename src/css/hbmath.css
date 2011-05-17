@@ -1,0 +1,11 @@
+h1 {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.0, #666), color-stop(0.5, #3A3A3A), color-stop(0.5, #222), color-stop(1.0, #000));
+    -webkit-box-shadow: 0 2px 1px #AAA;
+    -webkit-border-bottom-left-radius: 6px;
+    -webkit-border-bottom-right-radius: 6px;
+    font-size: 1.5em;
+    color: white;
+    padding: 10px 8px;
+    margin: 0 6px 6px 6px;
+    text-align: center;
+}
